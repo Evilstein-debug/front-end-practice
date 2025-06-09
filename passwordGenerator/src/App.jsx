@@ -7,6 +7,7 @@ function App() {
   const [numberAllowed, setNumberAllowed] = useState(false)
   const [spCharAllowed, setSpCharAllowed] = useState(false)
   const [buttonBg, setButtonBg] = useState('#0284c7')
+  const [newButtonBg, setNewButtonBg] = useState('#0284c7')
 
   const passRef = useRef(null)
   
@@ -38,9 +39,9 @@ function App() {
 
   return (
     <>
-      <div className='flex flex-col items-center w-full max-w-2xl mx-auto shadow-md rounded-lg px-4 my-8 bg-gray-600'>
-        <h1 className='text-white text-center text-3xl my-4'>Password Generator</h1>
-        <div className='flex shadow-lg rounded-lg overflow-hidden bg-white w-full mb-4'>
+      <div className='flex flex-col items-center w-full max-w-3xl mx-auto shadow-md rounded-lg px-4 my-8 bg-gray-600'>
+        <h1 className='text-white text-center text-3xl my-6'>Password Generator</h1>
+        <div className='flex shadow-lg rounded-lg overflow-hidden bg-white w-full mb-8'>
           <input
           type="text"
           value={password}
@@ -91,6 +92,19 @@ function App() {
               }}
               />
               <label htmlFor="spCharInput" className='text-white'>Special Characters</label>
+              <div className='flex items-center gap-x-1 ml-3'>
+                <button className='bg-sky-600 text-white p-3 outline-none shrink-0 cursor-pointer rounded-lg'
+                style={{backgroundColor: newButtonBg}}
+                onClick={() => {
+                  passwordGenerator();
+                  setNewButtonBg('#0369a1'); 
+                  setTimeout(() => {
+                  setNewButtonBg('#0284c7');
+                  }, 150);
+                }}
+                >Re-Generate
+                </button>
+              </div>
 
             </div>
           </div>
