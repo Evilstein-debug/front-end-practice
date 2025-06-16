@@ -33,9 +33,14 @@ function App() {
      >
 
     <div className='w-full'>
-      <div className='flex flex-col justify-center items-center w-full max-w-lg mx-auto border border-gray-100 rounded-lg p-5 backdrop-blur-xs bg-white/20 min-h-fit'>
+      <div className='flex flex-col justify-center items-center w-full max-w-3xl mx-auto border border-gray-100 rounded-lg p-5 backdrop-blur-xs bg-white/20 min-h-fit'>
       <h1 className='text-2xl mb-5 text-black'>Currency Converter</h1>
-        <form onSubmit={
+      <div className='flex justify-center'>
+        <img src="https://external-preview.redd.it/central-cee-21-savage-gbp-dropwizz-remix-v0-bHtwaXpP3h8q5gEpvgit4NfYjTDe20NcLaT15SQWyyU.jpg?auto=webp&s=10601ac4b6884b6edb152920f7a86930d5f01914" 
+        alt="gbp to usd"
+        className='w-xs h-60 mr-5 rounded-lg'
+        />
+        <form  onSubmit={
           (e) => {
             e.preventDefault()
             convert()
@@ -76,6 +81,7 @@ function App() {
             </button>
 
           </form>
+      </div>
         </div>
       </div>
      </div>
